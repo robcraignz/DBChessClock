@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+main {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  display: flex;
+  max-height: 100%;
+  height: 100%;
+
+  @media (max-width: 1482px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (orientation: landscape) {
+    flex-direction: row;
+  }
+}
+
+.counter {
+  background: #ffffff;
+  border: 0;
+  outline: none;
+  padding: 0;
+  align-items: center;
+  font-family: "Fira Code", monospace;
+  border-radius: 2.55rem;
+  height: 25rem;
+  width: 25rem;
+  margin: 1rem;
+  &:enabled {
+    box-shadow: 0.5rem 0.5rem 2rem #d9d9d9, -0.5rem -0.5rem 2rem #ffffff;
+  }
+  &:disabled {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  &--upper {
+    @media (max-width: 1482px) and (orientation: portrait) {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: 1024px) and (orientation: portrait),
+  (max-height: 1024px) and (orientation: landscape) {
+    border-radius: 2.3rem;
+    height: 22.5rem;
+    width: 22.5rem;
+  }
+  @media (max-width: 768px) and (orientation: portrait),
+  (max-height: 768px) and (orientation: landscape) {
+    border-radius: 2.05rem;
+    height: 20rem;
+    width: 20rem;
+  }
+
+  @media (max-width: 425px) and (orientation: portrait),
+  (max-height: 425px) and (orientation: landscape) {
+    border-radius: 1.8rem;
+    height: 17.5rem;
+    width: 17.5rem;
+  }
+
+  @media (max-width: 375px) and (orientation: portrait),
+  (max-height: 375px) and (orientation: landscape) {
+    border-radius: 1.55rem;
+    height: 15rem;
+    width: 15rem;
+  }
+
+  @media (max-width: 350px) and (orientation: portrait),
+  (max-height: 350px) and (orientation: landscape) {
+    border-radius: 1.3rem;
+    height: 12.5rem;
+    width: 12.5rem;
+  }
+}
+
+app-final-notification {
+  position: absolute;
+}
+
+.settings {
+  display: flex;
+  &__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border: 0;
+    font-size: 1.25rem;
+    height: 2rem;
+    width: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px #c4c4c4, -5px -5px 8px #ffffff;
+
+    &:active {
+      transition: transform 0.03s linear;
+      transform: scale(1.075);
+    }
+  }
+
+  @media (orientation: landscape) {
+    flex-direction: column;
+  }
+}
+
+img path {
+  fill: red;
+}

@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <header style="display: flex; justify-content: center;">
+    <h1>Settings</h1>
+  </header>
+  <mat-card>
+    <mat-card-title>Select Battle Size</mat-card-title>
+    <div>
+      <mat-select [(value)]="battleSize" (valueChange)="setBattleTime()">
+        <mat-option value="Strike Force - 3.0 hours">Strike Force - 3.0 hours</mat-option>
+        <mat-option value="Strike Force - 2.5 hours">Strike Force - 2.5 hours</mat-option>
+        <mat-option value="Incursion - 1.5 hours">Incursion - 1.5 hours</mat-option>
+      </mat-select>
+    </div>
+  </mat-card>
+<br>
+  <mat-card>
+    <main>
+      <section class="settings">
+
+        <button
+          class="settings__button settings__button--decrease"
+          (click)="decrement()"
+        >
+          -
+        </button>
+        <div class="settings__wrapper">
+          <p class="settings__counter">{{ count$ | async }}</p>
+        </div>
+        <button
+          class="settings__button settings__button--increase"
+          (click)="increment()"
+        >
+          +
+        </button>
+      </section>
+      <div>
+        <p class="units">
+          minutes per player<br>
+          10 minutes deducted for setup.<br>
+          Change as required.
+      </div>
+      <button class="start" (click)="start()" [routerLink]="['/counter']">
+        Start
+      </button>
+    </main>
+  </mat-card>
+
+</div>
